@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: bisque;
+        }
+        header{
+            background-color: blue;
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-family:monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .input-container{
+            background-color:white;
+            padding: 30px;
+            width: 500px;
+            margin: auto;
+            border-radius: 6px;
+            margin-top: 2rem;
+            box-shadow: 3px 4px 8px 7px rgba(0,0,0,0.4);
+        }
+        .input{
+            padding:10px;
+            width: 360px;
+            background-color:rgb(197, 196, 196);
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            text-transform: capitalize;
+            color:rebeccapurple;
+            font-size: x-large;
+        }
+        ::placeholder{
+            font-size: 1.2rem;
+                }
+        .btn{
+            background-color: rgb(7, 7, 245);
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: cornsilk;
+            font-weight: 600;
+            transform: translateX(10px);
+        }
+        .btn:hover{
+            background-color: rgb(4, 4, 143);
+
+        }
+        .output-container{
+            background-color:white;
+            padding: 30px;
+            width: 500px;
+            margin: auto;
+            border-radius: 6px;
+            margin-top: 2rem;
+            box-shadow: 3px 4px 8px 7px rgba(0,0,0,0.4);
+        }
+        .lists li{
+            list-style-type:none;
+            padding:10px;
+            width: 440px;
+            background-color:rgb(197, 196, 196);
+            border:1px solid gray;
+            outline: none;
+            border-radius: 6px;
+            margin-bottom:1rem;
+            cursor: pointer;
+            transition: background 1s ,color 1s;
+            font-size: 1.2rem;
+           }
+           .lists li:hover{
+            background-color:rgb(138, 133, 133);
+            color: aliceblue;
+           }
+           .heading{
+            text-align: center;
+            background-color: rgb(99, 99, 99);
+            color: blanchedalmond;
+            padding:10px;
+            width: fit-content;
+            margin: auto;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-left: 6px ridge red;
+            border-right: 6px ridge red;
+           }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍋FoodCook Planner</h1>
+    </header>
+    <main>
+             <!-- <div class="heading">
+                <h1>✅Succesfully</h1>
+             </div> -->
+    </main>
+    <div class="input-container">
+       <input type="text" class="input" id="input" placeholder="I like to eat"> 
+       <button type="button" class="btn" id="btn">Order</button>
+    </div>
+    <div class="output-container">
+        <ul class="lists">
+            <li>Noodles</li>
+            <li>Pasta</li>
+            <li>Sandwich</li>
+        </ul>
+    </div>
+
+    <script>
+        const input=document.getElementById("input");
+        const $btn =document.getElementById("btn");
+        const lists=document.getElementsByClassName("lists")
+
+        $btn.addEventListener("click",()=>{
+        lists[0].innerHTML += `<ul><li>${input.value}</li></ul>`
+        input.value="";
+        });
+        // Create Html Elements and Text using JS
+       function App(message){
+        const main=document.getElementsByTagName("main");
+        main[0].className="main"   
+        // const main=document.getElementById("main");
+        const div=document.createElement("div");
+        div.className="heading";
+        const head=document.createElement("h1");
+        const Textnode=document.createTextNode(message);
+        console.log(div,head);
+        div.append(head);
+        head.append(Textnode);
+        main[0].prepend(div);
+       };
+       App('✅Succesfully');
+       App('✅ Inserted');
+       App('✅In JS');
+    //    for loop
+    for(i=1;i<=10;i++){
+        const loop=document.getElementsByClassName("lists");
+        loop[0].innerHTML +=`<ul><li>new line=${i}</li></ul>`
+    }
+    </script>
+</body>
+</html>
