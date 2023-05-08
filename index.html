@@ -157,12 +157,13 @@
     <script>
         const input=document.getElementById("input");
         const $btn =document.getElementById("btn");
-        const lists=document.getElementsByClassName("lists")
+        const list=document.getElementsByClassName("lists")
 
         $btn.addEventListener("click",()=>{
-        lists[0].innerHTML += `<ul><li>${input.value}</li></ul>`
-        input.value="";
+        list[0].innerHTML += `<ul><li>${input.value}</li></ul>`
+//         input.value="";
         });
+    </script>
         // Create Html Elements and Text using JS
 //        function App(message){
 //         const main=document.getElementsByTagName("main");
@@ -185,6 +186,5 @@
     //     const loop=document.getElementsByClassName("lists");
     //     loop[0].innerHTML +=`<ul><li>new line=${i}</li></ul>`
     // }
-    </script>
 </body>
 </html>
